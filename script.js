@@ -1,8 +1,43 @@
 $(document).ready(function(){
 	var fruits = [];
 
-	function inventoryItem(name){
+	$("#allthefruits").on("click", ".buy", function(){
+		var fruitname = $(this).parent().find(".fruitname").text();
+		var fruit = fruits(fruitname);
 
+	})
+
+	function findFruit(fruitname){
+		for(var i = 0; i < fruits.length; i++) {
+			if(fruits[i].fruitname == fruitname)
+				return fruits[i];
+		}
+		return null;
+	}
+
+	function Inventoryitem(fruit){
+		this.history = [];
+		this.fruit = fruit;
+		this.quantity = 1;
+	}
+
+	function User(){
+		this.inventory = [];
+		this.cash = 100.00;
+		this.hasFruit = function(fruit){		
+			for(var i = 0; i < this.inventory.length; i++) {
+				if(inventory[i].fruit.name === fruit.name)
+					
+			}
+		}
+		this.buyFruit = function(fruit){
+			if(hasFruit(fruit)){
+				//we have fruit
+			} else{
+				var item = fruit.name;
+				this.inventory.push
+			}
+		}
 	}
 
 	function Fruit(name) {
@@ -30,7 +65,7 @@ $(document).ready(function(){
 			var currentPrice = fruits[i].currentPrice;
 			fruits[i].currentPrice = randomChange(currentPrice);
 		}
-	}, 1000);
+	}, 15000);
 
 	function randomChange(price){
 		number = randomNumber(0,1);
