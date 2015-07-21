@@ -18,7 +18,7 @@ $(document).ready(function(){
 	function Inventoryitem(fruit){
 		this.history = [];
 		this.fruit = fruit;
-		this.quantity = 1;
+		//this.quantity = 1;
 	}
 
 	function User(){
@@ -34,8 +34,11 @@ $(document).ready(function(){
 			if(hasFruit(fruit)){
 				//we have fruit
 			} else{
-				var item = fruit.name;
-				this.inventory.push
+				var item = new Inventoryitem(fruit);
+				item.history.push(fruit.currentPrice);
+				this.inventory.push(item);
+				cash = cash - fruit.currentPrice;
+
 			}
 		}
 	}
