@@ -1,3 +1,7 @@
 .container {
 	text-align: center;
 }
+
+.col-md {
+	border: 1px solid black;
+}

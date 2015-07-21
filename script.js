@@ -1,25 +1,36 @@
 $(document).ready(function(){
-	var apples = 0;
-	var oranges = 0;
-	var bananas = 0;
-	var grapes = 0;
-	var pears = 0;
+	var fruits = [];
 
-	function fruitPrice(){
-		fruit = randomNumber(0.50, 9.99);
-		return fruit;
-	};
+	function inventoryItem(name){
+
+	}
+
+	function Fruit(name) {
+		this.name = name;
+		this.currentPrice = randomNumber(0.5, 9.99);
+	}
+
+	fruits.push(new Fruit("Apple"));
+
+	// function fruitPrice(){
+	// 	fruit = randomNumber(0.50, 9.99);
+	// 	return fruit;
+	// };
 
 	// fruitPrice(apples);
 	// fruitPrice(oranges);
 	// fruitPrice(bananas);
 	// fruitPrice(grapes);
 	// fruitPrice(pears);
-	console.log(apples);
+	console.log(Fruit);
 
 
 	setInterval(function(){
-		apples = randomChange(apples);}, 1000);
+		for(var i = 0; i < fruits.length; i++) {
+			var currentPrice = fruits[i].currentPrice;
+			fruits[i].currentPrice = randomChange(currentPrice);
+		}
+	}, 1000);
 
 	function randomChange(price){
 		number = randomNumber(0,1);
